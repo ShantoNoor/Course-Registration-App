@@ -1,0 +1,15 @@
+ol {
+  list-style-type: none;
+}
+
+ol > li {
+  counter-increment: list-counter;
+}
+
+ol:first-child {
+  counter-reset: list-counter;
+}
+
+ol > li:before {
+  content: counter(list-counter) " ";
+}
