@@ -13,8 +13,8 @@ function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold text-red">Hello world!</h1>
-      <button className="btn btn-secondary text-white bg-purple1 w-full hover:-translate-y-1 duration-300 hover:shadow-lg" onClick={notify}>Notify !</button>
+      <h1 className="text-3xl font-bold text-red">Hello world!!!</h1>
+      <button className="text-lg font-medium bg-blue1 text-white w-full rounded-[4px] px-5 py-2 duration-300 hover:-translate-y-1 hover:shadow-md active:translate-y-[-2px] active:shadow-sm" onClick={notify}>Select</button>
       <ToastContainer />  
     </>
   );

@@ -4,10 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        purple1: "#E527B2",
+        blue1: "#2F80ED",
+        dark1: "#1C1B1B",
+        dark2: "rgba(28, 27, 27, 0.60)",
+        dark3: "rgba(28, 27, 27, 0.80)",
       },
       backgroundColor: {
-        background1: "#F9F6E2",
+        background1: "#F3F3F3",
       },
     },
   },
