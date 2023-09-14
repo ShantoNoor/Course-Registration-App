@@ -9,9 +9,6 @@ const Sidebar = () => {
 
       <p className="text-dark1 font-bold text-xl mb-5">Course Name</p>
       <ol className="mb-2">
-        <li className="text-dark2 text-base font-normal before:content:counter(list-item)">
-          Introduction to c programming
-        </li>
         <li className="text-dark2 text-base font-normal">
           Introduction to c programming
         </li>
