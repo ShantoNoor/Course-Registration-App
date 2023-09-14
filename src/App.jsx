@@ -3,6 +3,7 @@ import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "./components/Sidebar/Sidebar";
+import CardContainer from "./components/CardContainer";
 
 function App() {
   const [count, setCount] = useState([]);
@@ -22,7 +23,7 @@ function App() {
   return (
     <main className="bg-background1">
       <div className="container flex flex-col lg:flex-row mx-auto gap-6 px-3 pb-32">
-        <section className="w-full lg:w-[75%]"></section>
+        <CardContainer></CardContainer>
         <Sidebar></Sidebar>
       </div>
 
