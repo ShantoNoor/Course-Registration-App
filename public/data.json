@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to C Programming",
+    "price": 15000,
+    "credit": 1,
+    "thumbnail": "https://i.ibb.co/NVH0z6n/c.png",
+    "description": "Learn the fundamentals of C programming, including syntax, data types, and basic programming concepts."
+  },
+  {
+    "id": 2,
+    "title": "Introduction to Algorithms",
+    "price": 25000,
+    "credit": 2,
+    "thumbnail": "https://i.ibb.co/P11pyBk/algo.png",
+    "description": "Explore the world of algorithms, algorithmic analysis, and problem-solving techniques."
+  },
+  {
+    "id": 3,
+    "title": "Introduction to C++ for DSA",
+    "price": 10000,
+    "credit": 10,
+    "thumbnail": "https://i.ibb.co/m9m5thM/cpp.png",
+    "description": "Get started with C++ and learn how to use it for data structures and algorithms."
+  },
+  {
+    "id": 4,
+    "title": "Basic Data Structures",
+    "price": 35000,
+    "credit": 5,
+    "thumbnail": "https://i.ibb.co/wd5FCHH/ds.png",
+    "description": "Study fundamental data structures such as arrays, linked lists, and trees, and learn how to implement them."
+  },
+  {
+    "id": 5,
+    "title": "Introduction to OOP Python",
+    "price": 19000,
+    "credit": 5,
+    "thumbnail": "https://i.ibb.co/hCJWSMG/python.png",
+    "description": "Discover object-oriented programming (OOP) principles in Python and how to design and build Python applications."
+  },
+  {
+    "id": 6,
+    "title": "Software Engineering",
+    "price": 23000,
+    "credit": 2,
+    "thumbnail": "https://i.ibb.co/1rFYmF9/se.png",
+    "description": "Learn software engineering principles, including software development methodologies and best practices."
+  },
+  {
+    "id": 7,
+    "title": "AWS, Cloud Computing",
+    "price": 35000,
+    "credit": 5,
+    "thumbnail": "https://i.ibb.co/VNfzK39/aws.png",
+    "description": "Dive into cloud computing with Amazon Web Services (AWS) and understand cloud infrastructure and services."
+  },
+  {
+    "id": 8,
+    "title": "Database (MySQL)",
+    "price": 19000,
+    "credit": 5,
+    "thumbnail": "https://i.ibb.co/J7CPQq6/mysql.png",
+    "description": "Explore MySQL, a popular relational database management system, and learn how to manage databases."
+  },
+  {
+    "id": 9,
+    "title": "Problem-Solving Part",
+    "price": 23000,
+    "credit": 2,
+    "thumbnail": "https://i.ibb.co/jD1JZV8/ps.png",
+    "description": "Focus on problem-solving techniques and strategies to tackle complex programming challenges."
+  }
+]
