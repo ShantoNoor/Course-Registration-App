@@ -3,12 +3,7 @@ import bookLogo from "/book.svg";
 import dollarLogo from "../assets/dollar.svg";
 
 const Card = (props) => {
-  const { course } = props;
-  const notify = () => {
-    toast("Wow so easy !");
-    toast("Wow so easy !");
-    toast("Wow so easy !");
-  };
+  const { course, handleClick } = props;
 
   return (
     <div className="rounded-xl p-4 bg-white duration-300 hover:shadow-xl active:shadow-lg flex flex-col justify-between">
@@ -22,7 +17,7 @@ const Card = (props) => {
         </p>
       </div>
       <div>
-        <div className="flex justify-between items-center mb-7 lg:flex-col xl:flex-row gap-3">
+        <div className="flex justify-between items-center mb-7">
           <div className="flex gap-1 items-center">
             <img className="w-6 h-6" src={dollarLogo} alt="doller-logo" />
             <p className="text-dark2 text-base font-medium">
@@ -38,7 +33,7 @@ const Card = (props) => {
         </div>
         <button
           className="text-lg font-medium bg-blue1 text-white w-full rounded-[4px] py-2 duration-300 hover:-translate-y-1 hover:shadow-md active:translate-y-[-2px] active:shadow-sm"
-          onClick={notify}
+          onClick={() => handleClick(course)}
         >
           Select
         </button>

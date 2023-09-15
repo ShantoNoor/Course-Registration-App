@@ -1,23 +1,25 @@
 import "./Sidebar.css";
-const Sidebar = () => {
+const Sidebar = (props) => {
+  const { coursesList, remainingCredit } = props;
   return (
     <div className="p-6 bg-white rounded-xl">
       <p className="text-blue1 text-lg font-bold">
-        Credit Hour Remaining {20} hr
+        Credit Hour Remaining {remainingCredit} hr
       </p>
       <hr className="my-4 bg-dark0" />
 
       <p className="text-dark1 font-bold text-xl mb-5">Course Name</p>
       <ol className="mb-2">
-        <li className="text-dark2 text-base font-normal">
-          Introduction to c programming
-        </li>
-        <li className="text-dark2 text-base font-normal">Softwate Engg</li>
+        {coursesList.map((course) => (
+          <li key={course.id} className="text-dark2 text-base font-normal">
+            {course.title}
+          </li>
+        ))}
       </ol>
 
       <hr className="my-4 bg-dark0" />
       <p className="text-base text-dark3 font-medium">
-        Total Credit Hour : {13}
+        Total Credit Hour : {20 - remainingCredit}
       </p>
 
       <hr className="my-4 bg-dark0" />

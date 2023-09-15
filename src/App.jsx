@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "./components/Sidebar/Sidebar";
 import CardContainer from "./components/CardContainer";
 
 function App() {
   const [courses, setCourses] = useState([]);
+  const [coursesList, setCoursesList] = useState([]);
+  const [remainingCredit, setRemainingCredit] = useState(20);
 
   useEffect(() => {
     fetch("data.json")
@@ -14,6 +16,24 @@ function App() {
       .then((courses) => setCourses(courses))
       .catch((err) => console.log(err));
   }, []);
+
+  const handleClick = (course) => {
+    if (coursesList.find((listedCourse) => listedCourse.id === course.id)) {
+      toast.warn(`The course named "${course.title}" is already selected!`);
+      return;
+    }
+
+    if (remainingCredit - course.credit < 0) {
+      toast.warn(
+        `Can not select this course! Don't have enough credit remaining!!`
+      );
+      toast.warn(`Total Credit Hour cannot exceed 20 hrs!!!`);
+      return;
+    }
+
+    setRemainingCredit(remainingCredit - course.credit);
+    setCoursesList([...coursesList, { id: course.id, title: course.title }]);
+  };
 
   return (
     <>
@@ -25,14 +45,31 @@ function App() {
 
       <main className="container flex flex-col-reverse lg:flex-row mx-auto gap-6 px-6 pb-6">
         <section className="w-full lg:w-3/4">
-          <CardContainer courses={courses}></CardContainer>
+          <CardContainer
+            courses={courses}
+            handleClick={handleClick}
+          ></CardContainer>
         </section>
         <section className="w-full lg:w-1/4">
-          <Sidebar></Sidebar>
+          <Sidebar
+            coursesList={coursesList}
+            remainingCredit={remainingCredit}
+          ></Sidebar>
         </section>
       </main>
 
-      <ToastContainer /> 
+      <ToastContainer
+        position={window.innerWidth < 1024 ? "top-center" : "bottom-right"}
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover
+        theme="colored"
+      />
     </>
   );
 }
