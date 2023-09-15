@@ -23,7 +23,7 @@ function App() {
         </h1>
       </header>
 
-      <main className="container flex flex-col lg:flex-row mx-auto gap-6 px-3 pb-32">
+      <main className="container flex flex-col-reverse lg:flex-row mx-auto gap-6 px-6 pb-6">
         <section className="w-full lg:w-3/4">
           <CardContainer courses={courses}></CardContainer>
         </section>
