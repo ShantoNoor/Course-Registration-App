@@ -22,14 +22,14 @@ const Card = (props) => {
         </p>
       </div>
       <div>
-        <div className="flex justify-between items-center mb-7">
-          <div className="flex gap-3 items-center">
+        <div className="flex justify-between items-center mb-7 lg:flex-col xl:flex-row gap-3">
+          <div className="flex gap-1 items-center">
             <img className="w-6 h-6" src={dollarLogo} alt="doller-logo" />
             <p className="text-dark2 text-base font-medium">
               Price: {course.price}
             </p>
           </div>
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-1 items-center">
             <img className="w-6 h-6" src={bookLogo} alt="book-logo" />
             <p className="text-dark2 text-base font-medium">
               Credit: {course.credit}hr
