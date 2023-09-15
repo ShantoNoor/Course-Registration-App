@@ -1,6 +1,6 @@
 import "./Sidebar.css";
 const Sidebar = (props) => {
-  const { coursesList, remainingCredit } = props;
+  const { coursesList, remainingCredit, totalPrice } = props;
   return (
     <div className="p-6 bg-white rounded-xl">
       <p className="text-blue1 text-lg font-bold">
@@ -24,7 +24,7 @@ const Sidebar = (props) => {
 
       <hr className="my-4 bg-dark0" />
       <p className="text-base text-dark3 font-bold">
-        Total Price : {48000} USD
+        Total Price : {totalPrice} USD
       </p>
     </div>
   );

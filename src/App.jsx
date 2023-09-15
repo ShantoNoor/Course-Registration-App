@@ -9,6 +9,7 @@ function App() {
   const [courses, setCourses] = useState([]);
   const [coursesList, setCoursesList] = useState([]);
   const [remainingCredit, setRemainingCredit] = useState(20);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     fetch("data.json")
@@ -19,20 +20,22 @@ function App() {
 
   const handleClick = (course) => {
     if (coursesList.find((listedCourse) => listedCourse.id === course.id)) {
-      toast.warn(`The course named "${course.title}" is already selected!`);
+      toast.success(`The course named "${course.title}" is already selected!`);
       return;
     }
 
     if (remainingCredit - course.credit < 0) {
-      toast.warn(
+      toast.error(
         `Can not select this course! Don't have enough credit remaining!!`
       );
-      toast.warn(`Total Credit Hour cannot exceed 20 hrs!!!`);
+      toast.info(`Total Credit Hour cannot exceed 20 hrs!!!`);
       return;
     }
 
     setRemainingCredit(remainingCredit - course.credit);
     setCoursesList([...coursesList, { id: course.id, title: course.title }]);
+
+    setTotalPrice(totalPrice + course.price)
   };
 
   return (
@@ -54,6 +57,7 @@ function App() {
           <Sidebar
             coursesList={coursesList}
             remainingCredit={remainingCredit}
+            totalPrice={totalPrice}
           ></Sidebar>
         </section>
       </main>
