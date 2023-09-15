@@ -19,23 +19,31 @@ function App() {
   }, []);
 
   const handleClick = (course) => {
+    const position = {
+      position: window.innerWidth < 1024 ? "top-center" : "bottom-right",
+    };
+
     if (coursesList.find((listedCourse) => listedCourse.id === course.id)) {
-      toast.success(`The course named "${course.title}" is already selected!`);
+      toast.success(
+        `The course named "${course.title}" is already selected!`,
+        position
+      );
       return;
     }
 
     if (remainingCredit - course.credit < 0) {
       toast.error(
-        `Can not select this course! Don't have enough credit remaining!!`
+        `Can not select this course! Don't have enough credit remaining!!`,
+        position
       );
-      toast.info(`Total Credit Hour cannot exceed 20 hrs!!!`);
+      toast.info(`Total Credit Hour cannot exceed 20 hrs!!!`, position);
       return;
     }
 
     setRemainingCredit(remainingCredit - course.credit);
     setCoursesList([...coursesList, { id: course.id, title: course.title }]);
 
-    setTotalPrice(totalPrice + course.price)
+    setTotalPrice(totalPrice + course.price);
   };
 
   return (
@@ -63,7 +71,6 @@ function App() {
       </main>
 
       <ToastContainer
-        position={window.innerWidth < 1024 ? "top-center" : "bottom-right"}
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
